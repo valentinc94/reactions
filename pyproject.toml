@@ -1,0 +1,10 @@
+[project]
+name = "foundever-interview-assignment"
+version = "0.0.1"
+requires-python = ">=3.12"
+description = "FoundEver Take-home Interview Assignment"
+authors = [
+    { name = "Foundever Backend Team", email = "vadim.shestopalov@foundever.com" },
+]
+readme = "README.md"
+dependencies = ["fastapi"]

@@ -1,0 +1,38 @@
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: foundever-webapp
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/foundever-webapp
+      - ./migrations:/foundever-webapp/migrations:rw
+    command: >
+      uvicorn foundever.interfaces.routes:app
+      --host=0.0.0.0
+      --port=8000
+      --reload
+    depends_on:
+      - postgres
+    networks:
+      - foundever_backend_network
+
+  postgres:
+    image: postgres:17-alpine
+    env_file:
+      - .env
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+    networks:
+      - foundever_backend_network
+
+networks:
+  foundever_backend_network:
+
+volumes:
+  pgdata_dev:

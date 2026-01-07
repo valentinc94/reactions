@@ -1,0 +1,9 @@
+-r base.txt
+
+# Code quality
+black==25.12.0
+flake8==7.3.0
+isort==7.0.0
+
+# Unit Tests
+pytest==9.0.2
