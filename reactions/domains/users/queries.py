@@ -11,7 +11,7 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from foundever.apps.users import models
+from reactions.apps.users import models
 
 
 def fetch_user_record_by_username(db: Session, username: str) -> models.User | None:

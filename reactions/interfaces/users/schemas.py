@@ -8,7 +8,7 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from foundever.domains.users import schemas
+from reactions.domains.users import schemas
 
 
 class UserResponse(BaseModel):

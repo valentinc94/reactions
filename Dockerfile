@@ -9,7 +9,7 @@ ARG target_env="local"
 ENV TARGET_ENV=$target_env
 
 # Create and set the working directory
-WORKDIR /foundever-webapp
+WORKDIR /reactions-webapp
 
 # Install necessary system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -30,13 +30,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements files to the container
-COPY ./requirements/ /foundever-webapp/requirements/
+COPY ./requirements/ /reactions-webapp/requirements/
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r /foundever-webapp/requirements/${TARGET_ENV}.txt
+RUN pip install --no-cache-dir -r /reactions-webapp/requirements/${TARGET_ENV}.txt
 
 # Copy the application code to the working directory
-COPY . /foundever-webapp
+COPY . /reactions-webapp
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
@@ -45,7 +45,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 # Create a non-root user and adjust permissions
 RUN addgroup --gid 1000 docker \
     && adduser --gid 1000 --uid 1000 --disabled-password --gecos "" --quiet docker \
-    && chown -R docker:docker /foundever-webapp
+    && chown -R docker:docker /reactions-webapp
 
 # Switch to the non-root user
 USER docker

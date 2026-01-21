@@ -7,7 +7,7 @@ before creating, updating or querying users in the database.
 
 from sqlalchemy.orm import Session
 
-from foundever.apps.users import models
+from reactions.apps.users import models
 
 
 def check_if_username_exists(db: Session, username: str) -> bool:

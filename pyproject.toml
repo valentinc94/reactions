@@ -15,7 +15,7 @@ build-backend = "setuptools.build_meta"
 exclude = ["tests"]
 
 [tool.pytest.ini_options]
-testpaths = ["foundever/tests"]
+testpaths = ["reactions/tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"

@@ -1,4 +1,4 @@
-# Foundever: 
+# Reactions: 
 
 ---
 
@@ -26,7 +26,7 @@ Install the necessary dependencies:
 
 
 ```bash
-cd foundever
+cd reactions
 docker-compose build
 ```
 
@@ -36,11 +36,11 @@ Create a `.env` file in the root directory and set the required environment vari
 
 ```env
 POSTGRES_PASSWORD=verysecret
-POSTGRES_USER=foundever
-POSTGRES_DB=foundever_db
+POSTGRES_USER=reactions
+POSTGRES_DB=reactions_db
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
-DATABASE_URL=postgresql+psycopg2://foundever:verysecret@postgres:5432/foundever_db
+DATABASE_URL=postgresql+psycopg2://reactions:verysecret@postgres:5432/reactions_db
 ```
 
 ### Running the Project
@@ -82,7 +82,7 @@ To ensure that you can interact with the database, import the database session:
 
 ```bash
 # Import the database session from the core module
-from foundever.core import database
+from reactions.core import database
 
 # Create a new database session
 db = database.SessionLocal() 

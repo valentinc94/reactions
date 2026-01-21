@@ -14,8 +14,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from foundever.core import database
-from foundever.interfaces import routes
+from reactions.core import database
+from reactions.interfaces import routes
 
 
 class TestDatabase:

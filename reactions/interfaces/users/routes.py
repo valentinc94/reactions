@@ -7,10 +7,10 @@ Includes endpoints for creating, retrieving, and updating user information.
 from fastapi import APIRouter, Depends, Form, HTTPException, Query, responses, status
 from sqlalchemy.orm import Session
 
-from foundever.core import database
-from foundever.domains.commons import schemas as commons_schemas
-from foundever.domains.users import exceptions, processes, schemas
-from foundever.interfaces.users import schemas as users_schemas
+from reactions.core import database
+from reactions.domains.commons import schemas as commons_schemas
+from reactions.domains.users import exceptions, processes, schemas
+from reactions.interfaces.users import schemas as users_schemas
 
 router = APIRouter()
 

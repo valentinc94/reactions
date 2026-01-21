@@ -10,8 +10,8 @@ from datetime import datetime, timezone
 from sqlalchemy import JSON, DateTime, Enum, String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from foundever.apps.users import constants
-from foundever.core import database
+from reactions.apps.users import constants
+from reactions.core import database
 
 
 class User(database.Base):

@@ -4,23 +4,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: foundever-webapp
+    container_name: reactions-webapp
     ports:
       - "8000:8000"
     env_file:
       - .env
     volumes:
-      - .:/foundever-webapp
-      - ./migrations:/foundever-webapp/migrations:rw
+      - .:/reactions-webapp
+      - ./migrations:/reactions-webapp/migrations:rw
     command: >
-      uvicorn foundever.interfaces.routes:app
+      uvicorn reactions.interfaces.routes:app
       --host=0.0.0.0
       --port=8000
       --reload
     depends_on:
       - postgres
     networks:
-      - foundever_backend_network
+      - reactions_backend_network
 
   postgres:
     image: postgres:17-alpine
@@ -29,10 +29,10 @@ services:
     volumes:
       - pgdata_dev:/var/lib/postgresql/data
     networks:
-      - foundever_backend_network
+      - reactions_backend_network
 
 networks:
-  foundever_backend_network:
+  reactions_backend_network:
 
 volumes:
   pgdata_dev:

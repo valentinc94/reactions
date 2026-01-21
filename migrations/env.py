@@ -3,9 +3,9 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from foundever.core import database
+from reactions.core import database
 
-from foundever.apps.users import models as users_models
+from reactions.apps.users import models as users_models
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

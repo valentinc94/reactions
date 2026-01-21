@@ -8,9 +8,9 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from foundever.apps.users import models
-from foundever.core import repository
-from foundever.domains.users import exceptions, queries, schemas, validations
+from reactions.apps.users import models
+from reactions.core import repository
+from reactions.domains.users import exceptions, queries, schemas, validations
 
 
 def create_user(

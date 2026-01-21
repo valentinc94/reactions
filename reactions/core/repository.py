@@ -8,7 +8,7 @@ and ensure proper transaction handling and instance refreshing within the SQLAlc
 
 from sqlalchemy.orm import Session
 
-from foundever.core import types
+from reactions.core import types
 
 
 def create(db: Session, instance: types.Instance) -> types.Instance:

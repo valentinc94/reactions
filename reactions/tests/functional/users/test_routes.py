@@ -2,8 +2,8 @@ from fastapi import status
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
-from foundever.apps.users import constants
-from foundever.domains.users import processes, schemas
+from reactions.apps.users import constants
+from reactions.domains.users import processes, schemas
 
 
 class TestUserCreate:

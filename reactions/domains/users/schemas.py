@@ -11,7 +11,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, Field, model_validator
 
-from foundever.apps.users import constants
+from reactions.apps.users import constants
 
 
 class Reactions(BaseModel):
